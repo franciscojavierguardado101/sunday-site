@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <title>SpaceX</title>
+  </head>
+  <body>
+    <!--  -->
+    <!--Header is navbar:
+    We give them a class on the following code-->
+    <div id="overlay"></div>
+    <div id="mobile-menu" class="mobile-main-menu">
+        <ul>
+            <!-- This is the menu options of the navbar that will appear in the hamburger menu when clicking it -->
+            <li><a href="#">Mission</a></li>
+            <li><a href="#">Launches</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Updates</a></li>
+            <li><a href="#">Shop</a></li>
+
+            <!-- Though it's for menu, this is the only one that is needed for mobile
+            Note: Just this alone will make a mess on the navbar instead of showing on hamburger. It needs to be styled up a bit 
+            Besides, this is how to add an item-->
+            <li class="mobile-only"><a href="falcon9.html">Falcon 9</a></li>
+            <li class="mobile-only">
+              <a href="falcon-heavy.html">Falcon Heavy</a>
+            </li>
+            <li class="mobile-only"><a href="dragon.html">Dragon</a></li>
+            <li class="mobile-only"><a href="starship.html">Starship</a></li>
+            <li class="mobile-only"><a href="human-spaceflight.html">Human Spaceflight</a></li>
+            <li class="mobile-only"><a href="rideshare.html">Rideshare</a></li>
+            <li class="mobile-only"><a href="#">Starlink</a></li>
+
+
+        </ul>
+    </div>
+    <header class="main-header">
+        <div class="logo">  <!--Notice that logo, image and index are in the same header class. This means that  
+                            by clicking on the image/logo it will redirect us to the index/home of the site
+                            Follow this formula and I'll have my header and image/logo clickable -->
+            <a href="index.html">
+                <img src="img/logo.png" alt="SpaceX" />    <!-- Note: SpaceX is the name of an id. But this could be anything because notice that no image on the img folder has the name of SPaceX -->
+            </a>
+
+        </div>
+        <nav class="desktop-main-menu"> <!-- This part will contain the menu of the website. All the buttons on the navbar -->
+            <ul>
+                <li><a href="falcon9.html">Falcon 9</a></li> <!-- Buttons -->
+                <!-- Above line: a href="falcon9.html" means that by clicking on the button called Falcon 9 
+                it will redirect me to the link in the site called falcon9.html. Same thing can be said for the rest -->
+
+                <li><a href="falcon-heavy.html">Falcon Heavy</a></li>
+                <li><a href="dragon.html">Dragon</a></li>
+                <li><a href="starship.html">Starship</a></li>   <!-- This button doesn't take anywhere that's why #. Do more later -->
+                <li><a href="human-spaceflight.html">Human Spaceflight</a></li>   <!-- This button doesn't take anywhere that's why #. Do more later -->
+                <li><a href="rideshare.html">Rideshare</a></li>   <!-- This button doesn't take anywhere that's why #. Do more later -->
+                <li><a href="#">Starlink</a></li>   <!-- This button doesn't take anywhere that's why #. Do more later -->
+                <!--<li><a href="#">Whatever</a></li>    This button doesn't take anywhere that's why #. Do more later -->
+            </ul>
+    </header>
+
+
+    <!-- Hamburger Menu  -->
+    <!-- Reason why it's after the Header section is because, once the "hamburger" button is clicked the menu will
+        appear looking on top of the header part of the site, and user wouldn't be able to scroll down while in that mode-->
+
+        <!-- Note: I added open to the hamburger class but the "open" word will act separately on style.css -->
+        <!-- Actually, get rid of the "open" class and work it on the js file -->
+        <!-- Top, middle and bottom will become a line  -->
+    <button id="menu-btn" class="hamburger" type="button">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+    </button>
+    
+    
+    <!-- I call it Section A-->
+    <!-- I create a class called "section-a" -->
+    <!-- <div class="section-inner"> \\\\\  following line is for the effect of the button-->
+    <!-- With this snippet/paragraph of code I will control only what happened on that section of the site-->
+    <section class="section-a">
+        <div class="section-inner">
+            <h4>Upcoming Launch</h4>        <!-- The word above the button will have on the site -->
+            <h2>CRS-25 Mission</h2>         <!-- The word above the button but below line above -->
+            <a href="#" class="btn">
+            <!--<div class="btn">  -->     <!-- This is the class of the styling of the button||||||||||| This div button got commented out because of the fade-in animation in the css file for the section === .section-inner a { --> 
+                <div class="hover"></div>   <!-- div class for the hover effect //// Note: by typing .hover== I can create the whole div line-->
+                <span>Rewatch</span>        <!-- Name of the button -->
+            </a>  <!--</div> -->
+        </div>
+        <!-- I create a class called scroll-arrow -->
+        
+        <!-- This is for the arrow in the corner of the website and in order to fix that I need to go to the css file.
+        In order to distinguish, I'm just gonna call it 'arrow' + scroll-arrow -->
+        <div class="scroll-arrow">
+            <svg width="30px" height="20px">
+                <path
+                stroke="#ffffff"
+                fill="none"
+                stroke-width="2px"
+                d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "
+            ></path>
+        </svg>
+        </div>
+    </section>
+
+
+
+    <!--  Section B-->
+    <!-- While scrolling down - there are separate sections you are encountering. This is how! -->
+    <section class="section-b">
+        <div class="section-inner">
+            <h4>Secondary Launch</h4>        <!-- The word above the button will have on the site -->
+            <h2>Starlink Mission</h2>         <!-- The word above the button but below line above -->
+            <a href="#" class="btn">
+            <!--<div class="btn">  -->     <!-- This is the class of the styling of the button||||||||||| This div button got commented out because of the fade-in animation in the css file for the section === .section-inner a { --> 
+                <div class="hover"></div>   <!-- div class for the hover effect //// Note: by typing .hover== I can create the whole div line-->
+                <span>Rewatch</span>        <!-- Name of the button -->
+            </a>  <!--</div> -->
+        </div>
+        <!-- I create a class called scroll-arrow -->
+        
+        <!-- This is for the arrow in the corner of the website and in order to fix that I need to go to the css file.
+        In order to distinguish, I'm just gonna call it 'arrow' + scroll-arrow -->
+        <div class="scroll-arrow">
+            <svg width="30px" height="20px">
+                <path
+                stroke="#ffffff"
+                fill="none"
+                stroke-width="2px"
+                d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "
+            ></path>
+        </svg>
+        </div>
+    </section>
+
+
+
+    <!--  Section C-->
+    <!-- While scrolling down - there are separate "sections" you are encountering. This is how! -->
+    <section class="section-c">
+        <div class="section-inner">
+            <h4>Recent Mission</h4>        <!-- The word above the button will have on the site -->
+            <h2>SES-22 Mission</h2>         <!-- The word above the button but below line above -->
+            <a href="#" class="btn">
+            <!--<div class="btn">  -->     <!-- This is the class of the styling of the button||||||||||| This div button got commented out because of the fade-in animation in the css file for the section === .section-inner a { --> 
+                <div class="hover"></div>   <!-- div class for the hover effect //// Note: by typing .hover== I can create the whole div line-->
+                <span>Rewatch</span>        <!-- Name of the button -->
+            </a>  <!--</div> -->
+        </div>
+        <!-- I create a class called scroll-arrow -->
+        
+        <!-- This is for the arrow in the corner of the website and in order to fix that I need to go to the css file.
+        In order to distinguish, I'm just gonna call it 'arrow' + scroll-arrow -->
+        <div class="scroll-arrow">
+            <svg width="30px" height="20px">
+                <path
+                stroke="#ffffff"
+                fill="none"
+                stroke-width="2px"
+                d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "
+            ></path>
+        </svg>
+        </div>
+    </section>
+
+
+    <!--  Section D-->
+    <!-- While scrolling down - there are separate "sections" you are encountering. This is how! -->
+    <section class="section-d">
+        <div class="section-inner">
+            <h4>Recent Launch</h4>        <!-- The word above the button will have on the site -->
+            <h2>GlobalStar FM15 Mission</h2>         <!-- The word above the button but below line above -->
+            <a href="#" class="btn">
+            <!--<div class="btn">  -->     <!-- This is the class of the styling of the button||||||||||| This div button got commented out because of the fade-in animation in the css file for the section === .section-inner a { --> 
+                <div class="hover"></div>   <!-- div class for the hover effect //// Note: by typing .hover== I can create the whole div line-->
+                <span>Rewatch</span>        <!-- Name of the button -->
+            </a>  <!--</div> -->
+        </div>
+        <!-- I create a class called scroll-arrow -->
+        
+        <!-- This is for the arrow in the corner of the website and in order to fix that I need to go to the css file.
+        In order to distinguish, I'm just gonna call it 'arrow' + scroll-arrow -->
+        <div class="scroll-arrow">
+            <svg width="30px" height="20px">
+                <path
+                stroke="#ffffff"
+                fill="none"
+                stroke-width="2px"
+                d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "
+            ></path>
+        </svg>
+        </div>
+    </section>
+
+
+
+    <!--  Section E-->
+    <!-- While scrolling down - there are separate "sections" you are encountering. This is how! -->
+    <section class="section-e">
+        <div class="section-inner">
+        <!--    <h4>Recent Mission</h4>         The word above the button will have on the site --- No h4 because there is no date for it yet-->
+            <h2>Starship Update</h2>         <!-- The word above the button but below line above -->
+            <a href="#" class="btn">
+            <!--<div class="btn">  -->     <!-- This is the class of the styling of the button||||||||||| This div button got commented out because of the fade-in animation in the css file for the section === .section-inner a { --> 
+                <div class="hover"></div>   <!-- div class for the hover effect //// Note: by typing .hover== I can create the whole div line-->
+                <span>Rewatch</span>        <!-- Name of the button -->
+            </a>  <!--</div> -->
+        </div>
+        <!-- I create a class called scroll-arrow -->
+        
+        <!-- This is for the arrow in the corner of the website and in order to fix that I need to go to the css file.
+        In order to distinguish, I'm just gonna call it 'arrow' + scroll-arrow -->
+        <div class="scroll-arrow">
+            <svg width="30px" height="20px">
+                <path
+                stroke="#ffffff"
+                fill="none"
+                stroke-width="2px"
+                d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "
+            ></path>
+        </svg>
+        </div>
+    </section>
+
+
+    <section class="section-f">
+        <div class="section-inner">
+        <!--    <h4>Upcoming Launch</h4>         The word above the button will have on the site -->
+            <h2>Starship to Ask Nasa - Astronauts to the Moon</h2>         <!-- The word above the button but below line above -->
+            <a href="#" class="btn">
+            <!--<div class="btn">  -->     <!-- This is the class of the styling of the button||||||||||| This div button got commented out because of the fade-in animation in the css file for the section === .section-inner a { --> 
+                <div class="hover"></div>   <!-- div class for the hover effect //// Note: by typing .hover== I can create the whole div line-->
+                <span>Rewatch</span>        <!-- Name of the button -->
+            </a>  <!--</div> -->
+        </div>
+    </section>
+        <!-- I create a class called scroll-arrow -->
+        
+        <!-- This is for the arrow in the corner of the website and in order to fix that I need to go to the css file.
+        In order to distinguish, I'm just gonna call it 'arrow' + scroll-arrow -->
+
+
+
+        <!-- Commented out because there is no need for the scroll arrow to show up on the last one. -->
+        <!-- 
+        <div class="scroll-arrow">
+            <svg width="30px" height="20px">
+                <path
+                stroke="#ffffff"
+                fill="none"
+                stroke-width="2px"
+                d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "
+            ></path>
+        </svg>
+        </div>
+
+        -->
+
+
+
+        <!-- Footer -->
+
+        <footer>
+            <ul>
+                <li>SpaceX &copy; 2023</li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Flickr</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Suppliers</a></li>
+
+            </ul>
+        </footer>
+
+
+  
+</body>
+</html>

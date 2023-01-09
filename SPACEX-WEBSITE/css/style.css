@@ -1,0 +1,820 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap');
+
+/* Line above: I go to font google site and select the font/s I want then I just copy and paste */
+
+/* Following code: It's for taking away the padding. Fixing the site. Early stage */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*  */
+
+
+
+/* The font of the website: text*/
+body {
+  font-family: 'Familjen Grotesk', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none; /* Unordered list that comes with bullet points. Let's say 'none'. No bullet points */
+}
+
+/* Main Header/Navbar */
+.main-header {
+  position: fixed;  /* logo at the top. Done with position fixed */
+  top: 0; /* Position */
+  left: 0; /* Position */
+  width: 100%;  /* Position */
+  z-index: 3;   /* Position of the overlay. Meaning: Whenever I click on the hamburger the overlay info comes behind the navbar. Not on top of it */
+  display: flex;  /* On a flexed side. Meaning: Main page and hamburger menu will be on par */
+  justify-content: space-between;   /* Whenever I click on hamburger, the menu won't have an excess of space */
+  align-items: center;  /* Pictures/images will be centered */
+  text-transform: uppercase;  /* Everything for the header will be in 'UPPERCASE */
+  height: 100px;
+  padding: 0 30px;  /* I can play with it. Only, this measurement along with the above line are just perfect for this site */
+}
+
+/* Logo = as in, the place or location where the image is/ container*/
+.logo {
+  width: 210px; /* size of the image */
+  height: auto; /* Size of the image */
+}
+
+/* This code actually targets specifically the image size  */
+.logo img {
+  display: block;
+  width: 100%; /* It makes the image to be the right size. And on the right side */
+  height: auto;
+}
+
+/* Desktop Menu */
+.desktop-main-menu { /* .desktop-main-menu=class. //// Everything in css that starts with '.' is a class */
+  margin-right: 50px;   /* 50px is not absolute. It could've been anything. But we give 50px because we want 
+                            room for the hamburger menu when we click on it */
+}
+
+.desktop-main-menu ul {
+  display: flex;            /* So all the list items are in a row/horizontally */
+}
+
+.desktop-main-menu ul li {
+  position: relative;       /* Because of an animation/transition we have inside */
+  margin-right: 20px;       /* This is to have some spacing between each word on the navbar menu */
+  padding-bottom: 2px;      /* This means that the 'line' animation will appear only 2px distance below each word */
+}
+
+/* Menu item bottom border */
+/* This is not just an outline. It's actually an element with some animation */
+.desktop-main-menu ul li a::after { /* Sudo element */
+  content: '';  /* This technique actually acts as a ghost element. But it's best to leave empty so I can use it only for styling. Outlining  */
+  position: absolute; /* It's position absolute, which in turn is positioned with the list item above and left relative */
+  bottom: 0;  /* 0 space outlining from the bottom of the word of the menu*/
+  left: 0;  /* 0 outlining from the left */
+  width: 100%;  /* 100% on everything */
+  height: 1px;  /* This is how thick the outlining will be */
+  background: #fff; /* Color of the outlining */
+  
+  transform: scaleX(0);   /* This will make it so the outlining will disappear and only appear when I hover over */
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);  /* This code is for the outlining. There will be a transition effect. This transition will make it so if we see carefully the outlining will start small and then expand to the whole width of the word in the menu */
+  transform-origin: right center;
+}
+
+
+
+
+.desktop-main-menu ul li a:hover::after { /* This goes along with above code=scaleX(0) */
+  transform: scaleX(1);                   /* This goes along with above code=scaleX(0) */
+  transform-origin: left center;          /* The transition of the outlining effect will start from left to center */
+  transition-duration: 0.4s;              /* Outlining will remain but the whole transition effect will only last for 0.4s  */
+}
+
+
+
+
+/* Sections */
+
+section {
+  position: relative;   /* The image will be relative and absolute */
+  height: 100vh;    /* This line is important because the images will expand to the whole height of the section */
+  /* Following lines of code are needed to see the whole image and not just one part of it that extends to the whole site */
+  background-position: center center;   /* The image will be centered */
+  background-repeat: no-repeat;   /* The image won't repeat */
+  background-size: cover;         /* so it will fit perfectly with this code property line  */
+  text-transform: uppercase;      /* With this line everything on the site will be uppercase */
+}
+
+
+
+
+/* This snippet of code is tells the location of the words the site will have on it 
+-- to be precise, it calculates the words of the button as
+UPCOMING LAUNCH
+CRS-25 MISSION
+REWATCH
+*/
+
+/* Important=== With this code snippet I control everything that happens only on that part of the site */
+.section-inner {
+  position: absolute;
+  bottom: 100px;  /* Position of the words will be at the bottom||The lower the number the bottom it is||The higher the number, the higher the words will be */
+  left: 150px;    /* Words will be on the left side of the site */
+  max-width: 560px;
+}
+
+
+/* Epiphany: Check the css that contain the images of the spitfire audio site. Specifically the ones that have 8 images 
+clustered together */
+
+
+
+
+/* */
+/* This is for the words above the button
+UPCOMING LAUNCH
+CRS-25 MISSION
+REWATCH */
+.section-inner h4 {   /* We are targeting only the words in h4 */
+  font-size: 22px;  /* This is for the word ----UPCOMING LAUNCH */
+  margin-bottom: 5px;  /* This is for the space between UPCOMING LAUNCH and CRS-25 MISSION */
+  font-weight: 300;   /* How thick the words -----UPCOMING LAUNCH---- should be */
+  animation: fadeInUp 0.5s ease-in-out;   /* This line is to give a fade-in effect to h4 font letters */
+}
+
+
+
+
+
+
+
+.section-inner h2 {   /* We are targeting only the words in h2 */
+  font-size: 50px;    /* The size of the font for CRS-25 MISSION */
+  font-weight: 700;   /* How thick the font ----CRS-25 MISSION---- should be */
+  margin-bottom: 20px;    /* The space between ---CRS-25 MISSION--- and REWATCH ---- Note: That's why it's bottom */
+  animation: fadeInUp 0.5s ease-in-out 0.2s;    /* h2 words will fade-in upwords as refreshing with duration of 0.2s */
+  animation-fill-mode: both; /* Stop from showing at start of the animation*/
+}
+
+
+
+
+
+
+
+.section-inner a {
+  animation: fadeInUp 0.5s ease-in-out 0.4s;
+  animation-fill-mode: both; /* Stop from showing at start of the animation*/
+}
+
+
+
+/* Background images */
+
+.section-a {
+  /* With the next line I'll control everything that happens only on that part of the image that has section-a.webp image */
+  background-image: url('../img/section-a.webp');   /* This line of code is only for section-a ||| This could be only one part of the content assigned to section-a || The image will cover only section-a but I can make it so it covers any other section I want */
+}
+.section-b {
+  background-image: url('../img/section-b.webp');
+}
+.section-c {
+  background-image: url('../img/section-c.webp');
+}
+.section-d {
+  background-image: url('../img/section-d.webp');
+}
+.section-e {
+  background-image: url('../img/section-e.webp');
+}
+.section-f {
+  background-image: url('../img/section-f.webp');
+}
+
+
+
+
+
+.btn {
+  position: relative;   /* Meaning: It could be changed */
+  display: inline-block;  /* This is for the button --REWATCH-- This line is because we want the animation to go on a separate line but also we don't want its width on 100% */
+  cursor: pointer;
+  text-align: center;   /* The text to be centered */
+  min-width: 130px;   /* Basically calculating the width of the button*/
+  padding: 15px 50px;   /* Basically, it's the amount of space between the words and the lines of the button. 15px top to bottom---- 50px: left to right */
+  margin-top: 10px;   /* The amount of space between the top of the button and the words CRS-25 MISSION */
+  border: 2px solid #fff;   /* How thick the lines of the bottom are. And color white */
+  text-transform: uppercase;    /* Text of the button : uppercase */
+  font-weight: bold;    /* How thick the font will be */
+  overflow: hidden;   /* Important: This line helps that the hover inside, we don't want it to come out of its container */
+  z-index: 2;   /* Important: because we want the hover to work but also we don't want the text to be block */
+}
+
+
+
+
+
+.btn:hover span { /* Only for the button effect. The hovering effect */  
+  color: #000;    /* If I hover over the letters of the button will turn into black */
+}
+
+
+
+.btn .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: #000;
+  z-index: -1;    /* -1 because we want the text to be on top of the effect */
+  transform: translateY(100%);    /* To understand this: The animation effect of a white shade moving from bottom to top--- When it's 100% is pushed down all the way down. But, if I say 50% the white effect will be in the middle of the button. --- Also, if I say Y is from bottom to top --- X: from left to right */
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);    /* This line is so every time I hover over the button the letters in the button will transition from white to black */
+}
+
+
+
+/* Following 2 lines of code are very important: The animation will occur every time I hover over the button. Without these lines it would've been every time I refreshed */
+.btn:hover .hover {
+  transform: translateY(0);
+}
+
+
+
+/* 'arrow' + Scroll-arrow ---- Location of the arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeBounce 3s infinite;
+}
+
+
+
+
+
+
+
+/* Footer */
+
+
+footer {
+  position: relative;
+  padding: 55px 0;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer ul li {    /* Footer= List items --- It affects only content that is not links */
+  margin-right: 30px;
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 2.5;
+}
+
+footer ul li a {      /* Footer= List for links  */
+  color: #fff;
+  transition: color 0.6s;
+}
+
+footer ul li a:hover {      /* Footer hover effect for the content that has links*/
+  color: #aaa;
+}
+
+
+
+
+
+
+
+/* Hamburger Menu */
+
+/* Only this first section (.hamburger) of the lines won't show the hamburger yet */
+.hamburger {
+  position: fixed;
+  top: 40px;
+  right: 20px;
+  z-index: 10;  /* It's "10" because I always want it on top of everything. The menu, the overlay, everything */
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+}
+
+/* Finishing this section of the "Hamburger" will only display one line out of the three of the hamburger */
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transition: all 0.5s;
+}
+
+/* Doing this is now having 2 lines */
+.hamburger-middle {
+  transform: translateY(5px);
+}
+
+/* Doing this is now having 3 lines */
+/* Important: If I use 5px for the hamburger-middle then I'll use double for .hamburger bottom (10) so it's 
+evenly spaced */
+.hamburger-bottom {
+  transform: translateY(10px);
+}
+
+
+
+
+/* Transition hamburger to X when open */
+
+.open {
+  transform: rotate(90deg);  /* when the 3 lines are clicked then it will rotate */
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+  /* This will make it so an animation will occur */
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  /* This will make the full transition/animation that will make it so iut will turn into an "x" */
+}
+
+
+
+
+
+/* Overlay */
+/* The toggle/switch effect only works thanks to this set of lines and also
+because of this line in the JS file = overlay.classList.toggle('overlay-show');
+
+This will give the effect that when you click on the hamburger you will see a transition of semi 
+darkness on the whole screen 
+
+Called Overlay effect and it toggles. Toggling means switching from overlay effect to normal when clicking on hamburger
+*/
+
+.overlay-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+
+
+/* Stop body scroll */
+/* It stops the scroll bar when you click on hamburger */
+.stop-scrolling {
+  overflow: hidden;
+}
+
+
+
+
+
+/* Hide mobile main menu items for the mobile class they all share */
+
+.mobile-only {
+  display: none;
+}
+
+
+
+/* Mobile menu */
+/* This first snippet is just to position it */
+
+.mobile-main-menu {
+  position: fixed;
+  top: 0;   /* Position */
+  right: 0;   /* Position */
+  width: 350px;
+  height: 100%;
+  background: #000;
+  z-index: 4;
+  display: flex;    
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);    /* Transition that pops open when clicking hamburger */
+}
+
+
+
+
+
+
+/* Bring menu from right */
+/*  */
+
+/* Organized and clean */
+.show-menu {
+  transform: translateX(0);
+}
+
+.mobile-main-menu ul {
+  display: flex;
+  flex-direction: column;   /* In a column  */
+  align-items: end;     /* Aligned  */
+  justify-content: center;  /* Centered */
+  padding: 50px;    /* In the middle */
+  width: 100%;    /* Same width */
+}
+
+
+/* Now this part will make it beautiful. WELL separated */
+.mobile-main-menu ul li {
+  margin-bottom: 20px;    /* Certain distance or space top to bottom */
+  font-size: 18px;    /* Size of space */
+  text-transform: uppercase;    /* All items will be uppercase */
+  border-bottom: 1px #555 dotted;   /* Every item in the hamburger will be underlined */
+  width: 100%;    /* Underline will cover the whole item/word */
+  text-align: right;    /* Items will be on the right of hamburger menu */
+  padding-bottom: 8px;    /* Spacing will be underneath */
+}
+
+
+/* Now this part will make it beautiful */
+.mobile-main-menu ul li a {
+  color: #fff;
+  transition: color 0.6s;
+}
+
+.mobile-main-menu ul li a:hover {
+  color: #aaa;
+}
+
+
+/* Inner Pages */
+
+/* This will be for the 2nd page=Falcon 9  page */
+
+.bg-falcon-9 {
+  background-image: url('../img/falcon-9.webp');
+}
+
+.bg-falcon-heavy {
+  background-image: url('../img/falcon-heavy.webp');
+}
+
+.bg-dragon {
+  background-image: url('../img/dragon.webp');
+}
+
+.bg-satellite {
+  background-image: url('../img/satellite.webp');
+}
+
+
+.bg-mirror {
+  background-image: url('../img/mirror.webp');
+}
+
+.section-animate {
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Inner Pages= The content/words will be in the middle */
+.section-inner-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  text-align: center;
+  width: 80%;
+}
+
+.section-inner-center h3 {
+  font-size: 100px;
+  margin-bottom: 15px;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.section-inner-center p {
+  font-size: 20px;
+  animation: fadeInUp 0.5s ease-in-out 0.2s;
+  animation-fill-mode: both;
+}
+
+
+
+/* Stats */
+/* Stats are shown on falcon 9 page */
+
+.stats {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;    /* Stats showing side by side */
+  align-items: center;    /* Stats showing horizontally*/
+  justify-content: space-between;   /* Stats showing with some spacing in between*/
+  text-align: center;   /* Stats being centered */
+  text-transform: uppercase;
+}
+
+/* Stats show the actual numbers */
+.stats div span {
+  font-size: 160px;
+}
+
+.stats div h4 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+
+
+/* Animations */
+
+
+@keyframes fadeInUp {
+
+  
+  0% {          /* Animations of the words and the button will be from the start --- later line is 100% meaning the animation will have an end */
+    opacity: 0;
+    transform: translateY(140px); /* With this: the fade-in effect will be up to 140px. It's a lot of this animation of the words moving upwards */
+  }
+
+  
+  100% {    /* Animations will have an end: of the button and the letters*/
+    opacity: 1;
+    transform: translateY(0); /* The animation goes to 0 because it's like it goes back to where it started */
+  }
+}
+
+
+/* Inner Pages = fadeIn effect. Every refresh of the page means that the image will appear as in fading in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* 'arrow' + scroll-arrow --- animation--- Infinite animation*/
+
+@keyframes fadeBounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+    /* Logic of '-20px'---- The arrow icon appears at the bottom-center of the screen and
+    that's just X-50---- Now, if we want the arrow to have an animation where it goes up and down then
+    -20px is right. it'll go up slightly a bit   */
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Media Queries */
+/* This affects all the site for people watching it from a smartphone: iPhone12 */
+
+/* Everything under 960px will be smartphone scene */
+@media (max-width: 960px) {
+  /* Hide desktop menu */
+  .desktop-main-menu {
+    display: none;
+  }
+
+
+  /* Show main mobile items */
+ 
+  .mobile-only {
+    display: block;
+  }
+
+  .section-inner-center h3 {
+    font-size: 75px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Next 3 lines affect the mobile site positioning of the words each image displays */
+  .section-inner {
+    bottom: 75px;
+    left: 20px;
+  }
+
+  /* It affects the font size of the words on each image */
+  .section-inner h2 {
+    font-size: 40px;
+  }
+
+  /* This affects the positioning of items on footer in smartphone mode (items with no link) to be centered and above the items with links  */
+  footer ul li:first-child {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Size of the items on footer with links on it */
+  footer ul li {    
+    margin-right: 15px;
+  }
+
+
+  /* Affects logo in size and positioning in smartphone mode */
+  .logo {
+    width: 150px;
+    margin: auto;
+  }
+
+
+  .section-inner-center h3 {
+    font-size: 50px;
+  }
+
+ 
+
+
+
+  /* Stats */
+    /* Stats = The flex will put the numbers on top of each other*/
+
+  .stats {
+    flex-direction: column;
+  }
+
+  .stats div {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100vh;
+}
+
+h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 12vw;
+	font-family: "Reval";
+}
+
+.header .letter {
+	display: inline-block;
+	line-height: 1em;
+}
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: #0f0f0f;
+}
+
+.images {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+}
+
+.img {
+	width: 140px;
+	height: 180px;
+	background: darkblue;
+	filter: grayscale(1);
+	opacity: 0.6;
+}
+
+.img-1 {
+	transform: scale(1);
+	background: url(/images/img-1.png) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-2 {
+	transform: scale(1.4);
+	background: url(/images/img-2.png) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-3 {
+	transform: scale(1.2);
+	background: url(/images/img-3.png) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-4 {
+	transform: scale(0.9);
+	background: url(/images/img-4.png) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-5 {
+	transform: scale(1.2);
+	background: url(/images/img-5.png) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-6 {
+	transform: scale(1);
+	background: url(/images/img-6.png) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-7 {
+	transform: scale(1.1);
+	background: url(/images/img-7.png) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-8 {
+	transform: scale(0.9);
+	background: url(/images/img-8.png) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.navbar {
+	position: absolute;
+	bottom: 40px;
+	width: 100%;
+	margin: 20px auto;
+	display: flex;
+	justify-content: space-around;
+	color: #fff;
+	font-family: "Neue Montreal", Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
